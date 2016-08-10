@@ -5,3 +5,23 @@
 # In your final submission: 
 #  - Do not print anything extraneous!
 #  - Do not put anything but pass in main()
+
+def unpack_nested(list_int):     
+    new_list = []
+    for each_item in list_int:
+        if isinstance(each_item, int):
+            new_list.append(each_item)
+        else:
+            new_list += unpack_nested(each_item)     
+    return new_list
+
+def nested_sum(list_int):
+    new_list = unpack_nested(list_int)
+    result = sum(new_list)
+    return result   
+
+def main():
+    pass
+
+if __name__ == '__main__':
+    main()

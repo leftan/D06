@@ -14,11 +14,32 @@
 # Imports
 
 # Body
+def has_no_e(word):
+    '''word: str'''
+    if 'e' not in word.lower():
+        return True
+    else:
+        return False
 
+def print_no_e():    
+    with open('words.txt', 'r') as fin:
+        count = 0
+        total = 0
+        for line in fin:
+            word = line.strip()
+            if has_no_e(word) == True:
+                print(word)
+                count += 1  
+            total += 1
+        percentage = count/total * 100
+        print('The percentage = {:.2f}%'.format(percentage))
 
 ##############################################################################
 def main():
-    pass  # Call your function(s) here.
+    # print(has_no_e("Yifei"))
+    # print(has_no_e("INFO202"))
+    # print(has_no_e("Evening"))
+    print_no_e()
 
 if __name__ == '__main__':
     main()
